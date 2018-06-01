@@ -16,37 +16,29 @@
   function updateProgress(id, obj) {
     var startDate = obj.start_date;
     var endDate = obj.end_date;
-
     if (startDate != "" && endDate != "") {
       var minDate = new Date(convertStringToDate(startDate));
       var today = new Date();
       var maxDate = new Date(convertStringToDate(endDate));
-
       var nbTotalDays = Math.floor((maxDate.getTime() - minDate.getTime()) / 86400000);
       var nbPastDays = Math.floor((today.getTime() - minDate.getTime()) / 86400000);
-
       var percent = nbPastDays / nbTotalDays * 100;
-
       // Extreme cases
       if (percent < 0) {
         percent = 0;
       } else if (percent > 100) {
         percent = 100;
       }
-    
       $("#progressbar".concat(id)).reportprogress(percent);
       console.log("add".concat(id));
     }
   }
-  
   window.onload = function() {
-    
     var obj = gon.your_int.length;
-    
     for (var i = 0; i < obj; i++) {
       console.log("<%= @projects %>")
       console.log(gon.your_int)
-      updateProgress(i, gon.your_int[i]);  
+      updateProgress(i, gon.your_int[i]);
     }
   };
 </script>

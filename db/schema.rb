@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20180519224332) do
     t.string "designer"
     t.text "devlink"
     t.string "activebuild"
-    t.string "launched"
     t.string "inactive"
+    t.string "launched"
     t.text "editaccess"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end

@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     end
     gon.your_int = @your_int
 
-    if user_signed_in? 
+    if user_signed_in?
       @projects = Project.all.sort_by {|i| i.start_date - i.end_date}.reverse!.paginate(:page => params[:page], :per_page => 100)
       @projects = Project.all.sort_by {|i| i.start_date - i.end_date}.reverse!.paginate(:page => params[:page], :per_page => 100)
       @your_int = []
@@ -32,6 +32,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    gon.project = { start_date: @project.start_date, end_date: @project.end_date }
   end
 
   # GET /projects/new

@@ -189,7 +189,7 @@ input[type="radio"]:checked:after {
                   @media all and (max-width:991px) {
                     #scroll {
                       display:none;
-                    } 
+                    }
                   }
                 </style>
                   <div class="card-block text-center project-preview">
@@ -197,7 +197,7 @@ input[type="radio"]:checked:after {
                   </div>
                 </div>
                 <!-- END card -->
-              </div>              
+              </div>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@ input[type="radio"]:checked:after {
                 <br>
                 <%= render 'contentcheckboxes' %>
                 <br />
-                <h5>Website 
+                <h5>Website
                   <span class="semi-bold">Build</span>
                 </h5>
                 <p>In this phase we will build out the structure of the home page, internal pages, setup contact forms and overall site map.</p>
@@ -262,3 +262,10 @@ input[type="radio"]:checked:after {
 	</div>
 <div style="clear:both;"></div>
 <%= render "showlogic" %>
+
+<script type="text/javascript">
+  window.onload = function() {
+    updateProgress();
+    initShowPage();
+  };
+</script>
