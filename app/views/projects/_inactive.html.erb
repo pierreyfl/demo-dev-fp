@@ -43,7 +43,7 @@
                             | <%= link_to edit_project_path(project) do %><i class="fa fa-cog" aria-hidden="true"></i><% end %> | <%= link_to project, :method => :delete, :confirm => "Are you sure?" do %><i class="fa fa-trash" aria-hidden="true"></i><% end %>
                           <% end %>
                           <% else %>
-                            <!-- Must sign in --> 
+                            <!-- Must sign in -->
                           <% end %>
                         </span>
                     </div>
@@ -70,6 +70,7 @@
                     <%= link_to project_path(project) do %>
                       <h3 class="no-margin p-b-5"><%= project.name %></h3>
                     <% end %>
+                    <h5><%= timeline_display(project) %></h5>
                     <span class="small hint-text pull-left">Start: <%= project.start_date.strftime("%b %d, %Y") %></span>
                     <span class="pull-right small text-primary">Launch: <%= project.end_date.strftime("%b %d, %Y") %></span>
                   </div>
@@ -78,7 +79,7 @@
               <div class="row-xs-height">
                 <div class="col-xs-height col-bottom">
                   <div id="progressbarForm">
-                    <div id="progressbar">    
+                    <div id="progressbar">
                       <div id="progressbar<%= index %>"></div>
                     </div>
                   </div>

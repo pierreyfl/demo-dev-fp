@@ -129,6 +129,7 @@ input[type="radio"]:checked:after {
 				                    <div class="col-xs-height col-top">
 				                      <div class="p-t-5 p-b-30">
 				                        <h1 class="no-margin p-b-20"><%= @project.name %></h1>
+                                <h5><%= timeline_display(@project) %></h5>
 				                        <span class="small hint-text pull-left">Start: <%= @project.start_date.strftime("%m/%d/%Y") %></span>
 				                        <span class="small  pull-right hint-text">Launch: <%= @project.end_date.strftime("%m/%d/%Y") %></span>
 				                      </div>
